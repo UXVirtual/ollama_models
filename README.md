@@ -9,6 +9,8 @@ Ollama Modelfile collection for local AI coding workflows, optimized for two mac
 | MacBook | Apple M3 | 24 GB Unified Memory | — |
 | PC | NVIDIA RTX 5090 | 64 GB RAM | 32 GB VRAM |
 
+* Models can also be used with the same settings on an NVIDIA RTX 4090 with 24 GB VRAM.
+
 ## Models
 
 | Model | Type | Size (Q4_K_M) | Mac ctx | PC ctx |
@@ -78,9 +80,6 @@ After setup, select the desired model in Copilot Chat:
 
 | Script | Platform | Description |
 |--------|----------|-------------|
-| `scripts/ollama-network-expose.ps1` | Windows (PowerShell) | Exposes the Ollama API on the local network |
+| `scripts/start-ollama-network.bat` | Windows (CMD) | Exposes the Ollama API on the local network |
 
-```powershell
-# Run from repo root in an elevated PowerShell session
-powershell -ExecutionPolicy Bypass -File .\scripts\ollama-network-expose.ps1
-```
+Run `start-ollama-network.bat` as local admin in order to setup Windows Firewall rules and expose the underlying WSL service to the local network.
